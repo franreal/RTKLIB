@@ -5,7 +5,7 @@ SRC    = ../../../src
 
 # for beagleboard
 #CTARGET= -mfpu=neon -mfloat-abi=softfp -ffast-math
-CTARGET=
+CTARGET= -march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard
 
 OPTION = -DENAGLO -DENAGAL -DENAQZS -DENACMP -DTRACE -DNFREQ=3 -DNEXOBS=3
 CFLAGS = -Wall -O3 -ansi -pedantic -Wno-unused-but-set-variable -I$(SRC) $(OPTION) $(CTARGET) -g
