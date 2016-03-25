@@ -49,8 +49,12 @@ static int            I4(unsigned char *p) {int            i; memcpy(&i,p,4); re
 
 static float R4(unsigned char *p)
 {
+    float value;
+    unsigned char *q=(unsigned char *)&value;
+    int i;
     if (U4(p)==0x7FC00000) return 0.0f; /* quiet nan */
-    return *(float*)p;
+    for (i=0;i<4;i++) *q++=*p++;
+    return value;
 }
 static double R8(unsigned char *p)
 {
