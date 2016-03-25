@@ -238,7 +238,7 @@ static void tide_oload(gtime_t tut, const double *odisp, double *denu)
     time2epoch(tut,ep);
     fday=ep[3]*3600.0+ep[4]*60.0+ep[5];
     ep[3]=ep[4]=ep[5]=0.0;
-    days=timediff(epoch2time(ep),epoch2time(ep1975))/86400.0;
+    days=timediff(epoch2time(ep),epoch2time(ep1975))/86400.0+1.0;
     t=(27392.500528+1.000000035*days)/36525.0;
     t2=t*t; t3=t2*t;
     
