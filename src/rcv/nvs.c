@@ -113,11 +113,11 @@ static int decode_xf5raw(raw_t *raw)
         time=timeadd(time,-toff);
     }
     /* check time tag jump */
-    if (raw->time.time&&fabs(timediff(time,raw->time))>86400.0) {
+/*  if (raw->time.time&&fabs(timediff(time,raw->time))>86400.0) {
         time2str(time,tstr,3);
         trace(2,"nvs xf5raw time tag jump error: time=%s\n",tstr);
         return 0;
-    }
+    }*/
     if (fabs(timediff(time,raw->time))<=1e-3) {
         time2str(time,tstr,3);
         trace(2,"nvs xf5raw time tag duplicated: time=%s\n",tstr);
